@@ -2,58 +2,69 @@ namespace showdomilho;
 {
     public class Questao 
  {
+//________________________________________________________________________________________________________________
    public string Pergunta;
-   public string RespostaUm;
-   public string RespostaDois;
-   public string RespostaTres;
-   public string RespostaQuatro;
-   public string RespostaCinco;
-   public int RespostaCerta = 0;
+   public string Resposta0;
+   public string Resposta1;
+   public string Resposta2;
+   public string Resposta4;
+   public string Resposta5;
+  //________________________________________________________________________________________________________________
    public int Nivel;
+   public int RespostaCerta = 0;
    private Label labelPergunta; 
-   private Button buttonRespostaUm;
-   private Button buttonRespostaDois;
-   private Button buttonRespostaTres;
-   private Button buttonRespostaQuatro;
-   private Button buttonRespostaCinco;
-
+   private Button buttonResposta0;
+   private Button buttonResposta1;
+   private Button buttonResposta2;
+   private Button buttonResposta3;
+   private Button buttonResposta4;
+//___________________________________________________________________________________________________________________
    public Questao ()
    {
-
    }
+   //________________________________________________________________________________________________________________
    public void Desenhar ()
    {
      labelPergunta.Text = Pergunta;
-     buttonRespostaUm.Text = RespostaUm;
-     buttonRespostaDois.Text = RespostaDois;
-     buttonRespostaTres.Text = RespostaTres;
-     buttonRespostaQuatro.Text = RespostaQuatro;
-     buttonRespostaCinco.Text = RespostaCinco;
+     buttonResposta0.Text = Resposta0;
+     buttonResposta1.Text = Resposta1;
+     buttonResposta2.Text = Resposta2;
+     buttonResposta3.Text = Resposta3;
+     buttonResposta4.Text = Resposta4;
+
    }
-   public Questao (Label LP, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
+
+   //________________________________________________
+   ________________________________________________________________
+   public Questao (Label LP, Button bt01, Button bt02
+   , Button bt03, Button bt04, Button bt05)
    {
+
      labelPergunta = LP;
+
+     buttonRespostaUm = bt00;
      buttonRespostaUm = bt01;
      buttonRespostaUm = bt02;
      buttonRespostaUm = bt03;
      buttonRespostaUm = bt04;
-     buttonRespostaUm = bt05;
    }
+   //________________________________________________________________________________________________________________
    public void ConfigurarDesenho (Label LP, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
    {
      labelPergunta = LP;
+     buttonRespostaUm = bt00;
      buttonRespostaUm = bt01;
      buttonRespostaUm = bt02;
      buttonRespostaUm = bt03;
      buttonRespostaUm = bt04;
-     buttonRespostaUm = bt05;
    }
-   public bool VerificaResposta (int RespostaEscolhida)
+   //__________________________________________________________________________________________________________________
+   public bool VerificaResposta (int RespostaCerta)
    {
-     if ( RespostaEscolhida == RespostaCerta ) 
+     if ( RespostaCerta == RespostaCerta ) 
      {
-        var b = Qual (RespostaEscolhida);
-            b.BackgroundColor = Color.Green;
+        var b = QualBot (RespostaCerta);
+            b.BackgroundColor = Color.black;
         return true;
      }
      else
@@ -61,19 +72,23 @@ namespace showdomilho;
         return false;
      }
    }
-   private Button Qual (int RespostaEscolhida)
+   //___________________________________________________________________________________________________________________
+   private Button QualBot (int RespostaCerta)
    {
-    if (RespostaEscolhida == 1 )
-    return buttonRespostaUm;
-    else if (RespostaEscolhida == 2)
-    return buttonRespostaDois;
-    else if (RespostaEscolhida == 3)
-    return buttonRespostaTres;
-    else if (RespostaEscolhida == 4)
-    return buttonRespostaQuatro;
-    else if (RespostaEscolhida == 5)
-    return buttonRespostaCinco;
-   }
+    if (RespostaCerta == 0 )
+        return buttonResposta0;
 
+    else if (RespostaCerta == 1)
+        return buttonResposta1;
+
+    else if (RespostaCerta == 2)
+        return buttonResposta2;
+
+    else if (RespostaCerta == 3)
+        return buttonResposta3;
+
+    else if (RespostaCerta == 4)
+        return buttonResposta4;
+   }
    }
 }
