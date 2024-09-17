@@ -1,77 +1,79 @@
 namespace showdomilho;
-public class Questao
+{
+    public class Questao 
+ {
+   public string Pergunta;
+   public string RespostaUm;
+   public string RespostaDois;
+   public string RespostaTres;
+   public string RespostaQuatro;
+   public string RespostaCinco;
+   public int RespostaCerta = 0;
+   public int Nivel;
+   private Label labelPergunta; 
+   private Button buttonRespostaUm;
+   private Button buttonRespostaDois;
+   private Button buttonRespostaTres;
+   private Button buttonRespostaQuatro;
+   private Button buttonRespostaCinco;
 
-    {
-        public string Pergunta;
-        public string Resposta0;
-        public string Resposta1;
-        public string Resposta2;
-        public string Resposta3;
-        public string Resposta4;
-        public int levelresposta;
-        public int Respostascorreta;
-//________________________________________
-        private Label labelPergunta;
-        private Button BtnResposta0;
-        private Button BtnResposta1;
-        private Button BtnResposta2;
-        private Button BtnResposta3;
-        private Button BtnResposta4;
-    }
-//________________________________________
-    public void Desenho()
-        {
-            LabelPergunta.Text = Pergunta;
-            BtnResposta0.Text = resposta0;
-            BtnResposta1.Text = resposta1;
-            BtnResposta2.Text = resposta2;
-            BtnResposta3.Text = resposta3;
-            BtnResposta4.Text = resposta4;
-        }
-//________________________________________
+   public Questao ()
+   {
 
-        public void Quetão()
-        {
-        }
+   }
+   public void Desenhar ()
+   {
+     labelPergunta.Text = Pergunta;
+     buttonRespostaUm.Text = RespostaUm;
+     buttonRespostaDois.Text = RespostaDois;
+     buttonRespostaTres.Text = RespostaTres;
+     buttonRespostaQuatro.Text = RespostaQuatro;
+     buttonRespostaCinco.Text = RespostaCinco;
+   }
+   public Questao (Label LP, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
+   {
+     labelPergunta = LP;
+     buttonRespostaUm = bt01;
+     buttonRespostaUm = bt02;
+     buttonRespostaUm = bt03;
+     buttonRespostaUm = bt04;
+     buttonRespostaUm = bt05;
+   }
+   public void ConfigurarDesenho (Label LP, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
+   {
+     labelPergunta = LP;
+     buttonRespostaUm = bt01;
+     buttonRespostaUm = bt02;
+     buttonRespostaUm = bt03;
+     buttonRespostaUm = bt04;
+     buttonRespostaUm = bt05;
+   }
+   public bool VerificaResposta (int RespostaEscolhida)
+   {
+     if ( RespostaEscolhida == RespostaCerta ) 
+     {
+        var b = Qual (RespostaEscolhida);
+            b.BackgroundColor = Color.Green;
+        return true;
+     }
+     else
+     {
+        return false;
+     }
+   }
+   private Button Qual (int RespostaEscolhida)
+   {
+    if (RespostaEscolhida == 1 )
+    return buttonRespostaUm;
+    else if (RespostaEscolhida == 2)
+    return buttonRespostaDois;
+    else if (RespostaEscolhida == 3)
+    return buttonRespostaTres;
+    else if (RespostaEscolhida == 4)
+    return buttonRespostaQuatro;
+    else if (RespostaEscolhida == 5)
+    return buttonRespostaCinco;
+   }
 
-    public void Quetão(label Pergunta,lp butoon Button0,botton1,button2,button3,button4)
-        {
-            labelPergunta = lp
-            BtnResposta0 = buttonresposta0;
-            BtnResposta1 = buttonresposta1;
-            BtnResposta2 = buttonresposta2;
-            BtnResposta3 = buttonresposta3;
-            BtnResposta4 = buttonresposta4;
-        }
-
-         public void Comfigurarestruturadodesenho(label Pergunta,lp butoon Button0,botton1,button2,button3,button4)
-        {
-            labelPergunta = lp
-            BtnResposta0 = buttonresposta0;
-            BtnResposta1 = buttonresposta1;
-            BtnResposta2 = buttonresposta2;
-            BtnResposta3 = buttonresposta3;
-            BtnResposta4 = buttonresposta4;
-        }
-         
-        public bool Verificarresposta(int Respondido)
-        {
-         if (respondidoCerta== Respondido)
-        {
-            var btn = qualbtn(RR);
-            btn bacroudColor.Color Green
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-        Privat Button QualBtn (int Respondido)
-        {
-            if (Respondidocerto == 0)
-            return if  (Respostascorreta == 0)
-        }
-        } 
-
-        
+   }
+}
