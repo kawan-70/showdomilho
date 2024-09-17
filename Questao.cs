@@ -35,28 +35,28 @@ namespace showdomilho;
    }
 
    //________________________________________________
-   ________________________________________________________________
+ 
    public Questao (Label LP, Button bt01, Button bt02
    , Button bt03, Button bt04, Button bt05)
    {
 
      labelPergunta = LP;
 
-     buttonRespostaUm = bt00;
-     buttonRespostaUm = bt01;
-     buttonRespostaUm = bt02;
-     buttonRespostaUm = bt03;
-     buttonRespostaUm = bt04;
+    buttonResposta0 = bt00;
+    buttonResposta1 = bt01;
+    buttonResposta2 = bt02;
+    buttonResposta3 = bt03;
+    buttonResposta4 = bt04;
    }
    //________________________________________________________________________________________________________________
    public void ConfigurarDesenho (Label LP, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
    {
      labelPergunta = LP;
-     buttonRespostaUm = bt00;
-     buttonRespostaUm = bt01;
-     buttonRespostaUm = bt02;
-     buttonRespostaUm = bt03;
-     buttonRespostaUm = bt04;
+     buttonResposta0 = bt00;
+     buttonResposta1 = bt01;
+     buttonResposta2 = bt02;
+     buttonResposta3 = bt03;
+     buttonResposta4 = bt04;
    }
    //__________________________________________________________________________________________________________________
    public bool VerificaResposta (int RespostaCerta)
