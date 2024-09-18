@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="showdomilho.MainPage"
-             IsVisible="False">
+             BackgroundColor="#a88cf5">
 
-  <Grid>
+ <Grid>
      
         <Grid.RowDefinitions>
+          <RowDefinition Height="300"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/> 
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>               
+          <RowDefinition Height="*"/>                 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"/>
@@ -22,10 +22,82 @@
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+            <Image 
+                  Source="pergunta1.png"
+                  Grid.ColumnSpan="3"  
+                  Grid.RowSpan="0"
+                  Aspect="AspectFill"/>
+     
+          <Label 
+                   Text=""
+                   BackgroundColor="#c2b2ed"
+                   Grid.ColumnSpan="3"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="1" />
+            <Label 
+                   Text="Jogo do mião"
+                   Grid.ColumnSpan="3"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="1" />
 
-  <Image Source=""
-         Grid.RowSpan="0"
-         Grid.ColumnSpan="1"/>
+            <Button
+                   Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   Margin="0,0,0,5"
+                   BackgroundColor="#4d3b80"
+                   Text="A)" />        
 
-</Grid>
+            <Button
+                   Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   Margin="0,0,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="B)"/>
+
+            <Button
+                   Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   Margin="0,0,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="C)"/>
+
+            <Button
+                   Grid.ColumnSpan="3"
+                   Grid.Row="5"
+                   Margin="0,0,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="D)"/>
+
+            <Button
+                   Grid.ColumnSpan="3"
+                   Grid.Row="6"
+                   Margin="0,0,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="E)"/>
+       
+             <Button
+                   Grid.Column="0"
+                   Grid.Row="7"
+                   Margin="5,2,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="E)"/>
+            
+             <Button
+                   Grid.Column="1"
+                   Grid.Row="7"
+                   Margin="5,2,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="E)"/>
+
+             <Button
+                   Grid.Column="2"
+                   Grid.Row="7"
+                   Margin="5,2,0,5"
+                   BackgroundColor="#4d3b80" 
+                   Text="E)"/>
+
+        </Grid>
+
 </ContentPage>
