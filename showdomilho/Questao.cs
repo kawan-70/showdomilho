@@ -3,16 +3,17 @@ namespace showdomilho
   public class Questao
   {
     //________________________________________________________________________________________________________________
-    public string Pergunta;
-    public string Resposta0;
-    public string Resposta1;
-    public string Resposta2;
-    public string Resposta3;
-    public string Resposta4;
+    public string? Pergunta {get;set;}
+    public string? Resposta0{get;set;}
+    public string? Resposta1{get;set;}
+    public string? Resposta2{get;set;}
+    public string? Resposta3{get;set;}
+    public string? Resposta4{get;set;}
+    public int Nivel {get;set;} = 0;
+    public int RespostaCerta {get;set;} = 0;
+    public int RespostaE {get;set;} = 0;
     //________________________________________________________________________________________________________________
-    public int Nivel;
-    public int RespostaCerta = 0;
-    public int RespostaE;
+    
     private Label labelPergunta;
     private Button buttonResposta0;
     private Button buttonResposta1;

@@ -5,87 +5,130 @@
              BackgroundColor="#a88cf5"
              Shell.NavBarIsVisible="False">
 
- <Grid>
-     
-        <Grid.RowDefinitions>
-           <RowDefinition Height="200"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>
-           <RowDefinition Height="*"/>                 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="*"/>
-           <ColumnDefinition Width="*"/>
-           <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+ 
+       <Grid>
+              <Grid.RowDefinitions>
+                     <RowDefinition Height="*"/>
+                     <RowDefinition Height="100"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="70"/>
+                     <RowDefinition Height="100"/>
+              </Grid.RowDefinitions>
 
-            <Image 
-                  Source="pergunta1.png"
-                  Grid.ColumnSpan="3"  
-                  Grid.RowSpan="0"
-                  Aspect="AspectFill"/>
-     
-            
+              <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
 
-            <Button Text="A"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="2"
-                   Margin="0,0,0,5"
-                   BackgroundColor="#4d3b80"
-                    />        
+              <Image
+                     Source="pergunta1.png"
+                     Opacity=".8"
+                     Aspect="Fill"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Grid.RowSpan="8"
+                     Grid.ColumnSpan="3"/>
 
-            <Button Text="B"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="3"
-                   Margin="0,0,0,5"
-                   BackgroundColor="#4d3b80" 
-                  />
 
-            <Button Text="C"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="4"
-                   Margin="0,0,0,5"
-                   BackgroundColor="#4d3b80" 
-                   />
+              <Frame
+                     BackgroundColor="#742fb5"
+                     Grid.Row="0"
+                     Grid.ColumnSpan="3"
+                     Margin="5">
 
-            <Button Text="D"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="5"
-                   Margin="0,0,0,5"
-                   BackgroundColor="#4d3b80" 
-                  />
+                     <Label
+                            x:Name="labelPergunta"
+                            Text="Teste "
+                            TextColor="Black"
+                            FontSize="26"/>
+              </Frame>
 
-            <Button Text="E"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="6"
-                   Margin="0,0,0,5"
-                   BackgroundColor="#4d3b80" 
-                  />
-       
-             <Button Text="E"
-                   Grid.Column="0"
-                   Grid.Row="7"
-                   Margin="5,2,0,5"
-                   BackgroundColor="#4d3b80" 
-                   />
-            
-             <Button
-                   Grid.Column="1"
-                   Grid.Row="7"
-                   Margin="5,2,0,5"
-                   BackgroundColor="#4d3b80" 
-                   Text="E"/>
+              <Button x:Name="Resposta01"                    
+                      Text="a-"
+                      BackgroundColor="#74dde3ed"
+                      TextColor="Black"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="2"
+                      Grid.ColumnSpan="3"/>
 
-             <Button
-                   Grid.Column="2"
-                   Grid.Row="7"
-                   Margin="5,2,0,5"
-                   BackgroundColor="#4d3b80" 
-                   Text="E"/>
+              <Button x:Name="Resposta02"                     
+                      Text="b-"
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="3"
+                      Grid.ColumnSpan="3"/>
 
-        </Grid>
+              <Button x:Name="Resposta03"        
+                      Text="c-"
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="4"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="Resposta04"                    
+                      Text="d-"
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="5"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="Resposta05"  
+                      Text="E-"
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="5"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="6"
+                      Grid.ColumnSpan="3"/>
+
+              <Button x:Name="dica1"
+                      FontFamily="FontCard"
+                      Padding="0"
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="0"/>
+
+              <Button x:Name="dica2"
+                      Text=""
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="1"/>
+
+              <Button x:Name="dica3"
+                      Text=""
+                      BackgroundColor="#55dde3ed"
+                      TextColor="Black"
+                      Margin="40,15,40,15"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Grid.Row="7"
+                      Grid.Column="2"/>
+
+
+       </Grid>
+
 </ContentPage>
