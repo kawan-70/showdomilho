@@ -55,7 +55,7 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="2"
-                      Grid.ColumnSpan="3"/>
+                      Grid.ColumnSpan="3"/> 
 
               <Button x:Name="Resposta02"                     
                       Text="b-"
