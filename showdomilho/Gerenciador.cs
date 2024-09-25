@@ -2,12 +2,16 @@ namespace showdomilho
 {
     public class Gerenciador
     {
-        private List<Questao> ListaQuestoes = new List<Questao>();
-        private List<int> ListaQuestoesRespondidas = new List<int>();
-        private Questao QuestaoCorrente;
+        List<Questao> ListaQuestoes = new List<Questao>();
+        List<int> ListaQuestoesRespondidas = new List<int>();
+        Questao QuestaoCorrente;
+        Label labelnivel;
+        Label Labelpontuacao;
 
-        public Gerenciador(Label labelPerg, Button btnResp01, Button btnResp02, Button btnResp03, Button btnResp04, Button btnResp05)
+        public Gerenciador(Label labelPerg, Button btnResp01, Button btnResp02, Button btnResp03, Button btnResp04, Button btnResp05, Label labelnivel, Labelpontuacao,)
         {
+            Label = labelnivel;
+            Label = Labelpontuacao;
             CriaPerguntas(labelPerg, btnResp01, btnResp02, btnResp03, btnResp04, btnResp05);
         }
 

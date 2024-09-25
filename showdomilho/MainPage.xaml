@@ -47,6 +47,24 @@
                             FontSize="26"/>
               </Frame>
 
+           <Label x:Name ="Labelpontuacao"
+                  Text="Pontuação= 0"
+                  Margin="7,5,0,0"
+                  BackgroundColor="Transparent"
+                  TextColor="Black"
+                  FontSize="14"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="2" />
+
+            <Label x:Name ="labelnivel"
+                   Text="Nivel= 0"
+                   Margin="7,5,0,0"
+                   BackgroundColor="Transparent"
+                   TextColor="Black"
+                   FontSize="14"
+                   Grid.Row="1"
+                   Grid.Column="2" />
+
               <Button x:Name="Resposta01"                    
                       Text="a-"
                       BackgroundColor="#74dde3ed"
@@ -55,7 +73,8 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="2"
-                      Grid.ColumnSpan="3"/> 
+                      Grid.ColumnSpan="3"
+                      Clicked="ClickdResposta01"/> 
 
               <Button x:Name="Resposta02"                     
                       Text="b-"
@@ -65,7 +84,8 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="3"
-                      Grid.ColumnSpan="3"/>
+                      Grid.ColumnSpan="3"
+                      Clicked="ClickdResposta02"/>
 
               <Button x:Name="Resposta03"        
                       Text="c-"
@@ -75,7 +95,8 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="4"
-                      Grid.ColumnSpan="3"/>
+                      Grid.ColumnSpan="3"
+                      Clicked="ClickdResposta03"/>
 
               <Button x:Name="Resposta04"                    
                       Text="d-"
@@ -85,7 +106,8 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="5"
-                      Grid.ColumnSpan="3"/>
+                      Grid.ColumnSpan="3"
+                      Clicked="ClickdResposta04"/>
 
               <Button x:Name="Resposta05"  
                       Text="E-"
@@ -95,7 +117,8 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="6"
-                      Grid.ColumnSpan="3"/>
+                      Grid.ColumnSpan="3"
+                      Clicked="ClickdResposta05"/>
 
               <Button x:Name="dica1"
                       FontFamily="FontCard"
@@ -106,27 +129,28 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Clicked="dica01"/>
 
               <Button x:Name="dica2"
-                      Text=""
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="40,15,40,15"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      Clicked="dica02"/>
 
               <Button x:Name="dica3"
-                      Text=""
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="40,15,40,15"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="2"/>
+                      Grid.Column="2"
+                      Clicked="dica03"/>
 
 
        </Grid>
