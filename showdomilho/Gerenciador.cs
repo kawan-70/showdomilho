@@ -2,23 +2,26 @@ namespace showdomilho
 {
     public class Gerenciador
     {
-        List<Questao> ListaQuestoes = new List<Questao>();
-        List<int> ListaQuestoesRespondidas = new List<int>();
-        Questao QuestaoCorrente;
-        Label labelnivel;
-        Label Labelpontuacao;
-
-        public Gerenciador(Label labelPerg, Button btnResp01, Button btnResp02, Button btnResp03, Button btnResp04, Button btnResp05, Label labelnivel, Labelpontuacao,)
-        {
-            Label = labelnivel;
-            Label = Labelpontuacao;
-            CriaPerguntas(labelPerg, btnResp01, btnResp02, btnResp03, btnResp04, btnResp05);
-        }
-
-        private HashSet<int> QuestoesRespondidas = new HashSet<int>();
-        public int Pontuacao { get; private set; }
         int NivelAtual = 1;
+        public int Pontuacao { get; private set; }
+        List<Questao> ListaQuestoes = new List<Questao>();
+        List<int> QuestoesRespondidas = new List<int>();
+        Questao QuestaoAtual;
+        Label labelnivel;
+        Label labelpontuacao;
+        
 
+
+        public Gerenciador(Label labelPergunta, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05, Label labelnivel, Label labelpontuacao)
+        {
+            CriaPerguntas(labelPergunta, BT01, BT02, BT03,BT04 , BT05);
+            this.labelnivel = labelnivel;
+            this.labelpontuacao =labelpontuacao;
+            ProximaQuestao();
+
+
+        }
+        
         void inicializar()
         {
             Pontuacao = 0;
@@ -50,10 +53,10 @@ namespace showdomilho
                 Pontuacao = 1000000;
         }
 
-        private void CriaPerguntas(Label lp, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
+        private void CriaPerguntas(Label labelPergunta, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05)
         {
             var q0 = new Questao();
-            q0.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q0.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q0.Pergunta = "Qual é a capital da Argentina?";
             q0.Resposta0 = "Brasil";
             q0.Resposta1 = "Caracas";
@@ -65,7 +68,7 @@ namespace showdomilho
             ListaQuestoes.Add(q0);
 
             var q2 = new Questao();
-            q2.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q2.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q2.Pergunta = "Qual é o maior planeta do sistema solar?";
             q2.Resposta0 = "Terra";
             q2.Resposta1 = "Marte";
@@ -76,7 +79,7 @@ namespace showdomilho
             ListaQuestoes.Add(q2);
 
             var q3 = new Questao();
-            q3.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q3.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q3.Pergunta = "Qual é a fórmula da água?";
             q3.Resposta0 = "H2O";
             q3.Resposta1 = "CO2";
@@ -87,7 +90,7 @@ namespace showdomilho
             ListaQuestoes.Add(q3);
 
             var q4 = new Questao();
-            q4.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q4.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q4.Pergunta = "Qual é o símbolo químico do ouro?";
             q4.Resposta0 = "Au";
             q4.Resposta1 = "Ag";
@@ -102,7 +105,7 @@ namespace showdomilho
 
 
             var q5 = new Questao();
-            q5.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q5.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q5.Pergunta = "Qual é a capital da França?";
             q4.Resposta0 = "Paris";
             q4.Resposta1 = "Londres";
@@ -113,7 +116,7 @@ namespace showdomilho
             ListaQuestoes.Add(q5);
 
             var q6 = new Questao();
-            q6.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q6.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q6.Pergunta = "Qual é o continente conhecido como berço da humanidade?";
             q6.Resposta0 = "África";
             q6.Resposta1 = "Ásia";
@@ -124,7 +127,7 @@ namespace showdomilho
             ListaQuestoes.Add(q6);
 
             var q7 = new Questao();
-            q7.ConfigurarDesenho(lp, BT01, BT02, BT03, BT04, BT05);
+            q7.ConfigurarDesenho(labelPergunta, BT01, BT02, BT03, BT04, BT05);
             q7.Pergunta = "Quem escreveu 'Dom Casmurro'?";
             q7.Resposta0 = "Machado de Assis";
             q7.Resposta1 = "José de Alencar";
@@ -140,7 +143,7 @@ namespace showdomilho
 
         public async void VerificarSeEstaCorreta(int RespostaCerta)
         {
-            if (QuestaoCorrente.VerificarSeEstaCorreta(RespostaCerta))
+            if (QuestaoAtual.VerificarSeEstaCorreta(RespostaCerta))
             {
                 await Task.Delay(1000);
                 AdicionaPontuacao(NivelAtual);
@@ -149,7 +152,7 @@ namespace showdomilho
             }
             else
             {
-                await Task.Delay(25000);
+                await Task.Delay(1000);
                 await App.Current.MainPage.DisplayAlert("errou", "deu game over", "OK");
                 inicializar();
             }
@@ -168,8 +171,8 @@ namespace showdomilho
             QuestoesRespondidas.Add(numRandomNumber);
 
 
-            QuestaoCorrente = ListaQuestoes[numRandomNumber];
-            QuestaoCorrente.Desenhar();
+            QuestaoAtual = ListaQuestoes[numRandomNumber];
+            QuestaoAtual.Desenhar();
         }
 
     }

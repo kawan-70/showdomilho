@@ -129,8 +129,7 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="0"
-                      Clicked="dica01"/>
+                      Grid.Column="0"/>
 
               <Button x:Name="dica2"
                       BackgroundColor="#55dde3ed"
@@ -139,8 +138,7 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="1"
-                      Clicked="dica02"/>
+                      Grid.Column="1"/>
 
               <Button x:Name="dica3"
                       BackgroundColor="#55dde3ed"
@@ -149,8 +147,7 @@
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
                       Grid.Row="7"
-                      Grid.Column="2"
-                      Clicked="dica03"/>
+                      Grid.Column="2"/>
 
 
        </Grid>
