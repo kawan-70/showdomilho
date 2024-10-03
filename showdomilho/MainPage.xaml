@@ -66,7 +66,7 @@
                    Grid.Column="2" />
 
               <Button x:Name="Resposta01"                    
-                      Text="a-"
+                     
                       BackgroundColor="#74dde3ed"
                       TextColor="Black"
                       Margin="5"
@@ -77,7 +77,7 @@
                       Clicked="ClickdResposta01"/> 
 
               <Button x:Name="Resposta02"                     
-                      Text="b-"
+                      
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="5"
@@ -88,7 +88,7 @@
                       Clicked="ClickdResposta02"/>
 
               <Button x:Name="Resposta03"        
-                      Text="c-"
+                      
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="5"
@@ -99,7 +99,7 @@
                       Clicked="ClickdResposta03"/>
 
               <Button x:Name="Resposta04"                    
-                      Text="d-"
+                      
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="5"
@@ -110,7 +110,7 @@
                       Clicked="ClickdResposta04"/>
 
               <Button x:Name="Resposta05"  
-                      Text="E-"
+                      
                       BackgroundColor="#55dde3ed"
                       TextColor="Black"
                       Margin="5"

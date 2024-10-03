@@ -14,19 +14,21 @@ namespace showdomilho
 
         public Gerenciador(Label labelPergunta, Button BT01, Button BT02, Button BT03, Button BT04, Button BT05, Label labelnivel, Label labelpontuacao)
         {
-            CriaPerguntas(labelPergunta, BT01, BT02, BT03,BT04 , BT05);
             this.labelnivel = labelnivel;
             this.labelpontuacao =labelpontuacao;
+            CriaPerguntas(labelPergunta, BT01, BT02, BT03,BT04 , BT05);
             ProximaQuestao();
 
 
         }
         
-        void inicializar()
+        void Inicializar()
         {
             Pontuacao = 0;
             NivelAtual = 1;
             ProximaQuestao();
+            labelpontuacao.Text="Pontuação:R$"+Pontuacao.ToString();
+            labelnivel.Text="Nível:"+NivelAtual.ToString();
         }
 
         void AdicionaPontuacao(int n)
@@ -149,31 +151,34 @@ namespace showdomilho
                 AdicionaPontuacao(NivelAtual);
                 NivelAtual++;
                 ProximaQuestao();
+                labelpontuacao.Text="Pontuação:R$"+Pontuacao.ToString();
+                labelnivel.Text = "Nível:" + NivelAtual.ToString();
             }
-            else
+
+
+        if (NivelAtual >=10)
             {
-                await Task.Delay(1000);
-                await App.Current.MainPage.DisplayAlert("errou", "deu game over", "OK");
-                inicializar();
+            await App.Current.MainPage.DisplayAlert("parabens", "você acertou!","Ok");
+            Inicializar();
+            } 
+        else
+            {
+            await App.Current.MainPage.DisplayAlert("Game" ,"over!","Ok");
+            Inicializar(); 
+            QuestoesRespondidas.Clear();
             }
         }
-
-        public void ProximaQuestao()
-        {
-
-            var numRandomNumber = Random.Shared.Next(0, ListaQuestoes.Count -1);
-                  while (QuestoesRespondidas.Contains(numRandomNumber))
-            {
-                numRandomNumber = Random.Shared.Next(0, ListaQuestoes.Count);
-            }
-
-
-            QuestoesRespondidas.Add(numRandomNumber);
-
-
-            QuestaoAtual = ListaQuestoes[numRandomNumber];
+        
+        void ProximaQuestao()
+     {
+            var numAleat = Random.Shared.Next(0, ListaQuestoes.Count);
+            while (QuestoesRespondidas.Contains(numAleat))
+            numAleat = Random.Shared.Next(0, ListaQuestoes.Count);
+            QuestoesRespondidas.Add(numAleat);
+            QuestaoAtual = ListaQuestoes[numAleat];
             QuestaoAtual.Desenhar();
+     }
         }
 
-    }
+    
 }
