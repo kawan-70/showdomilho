@@ -1,115 +1,107 @@
+namespace showdomilho;
 
-namespace showdomilho
+public class Questao:IEquatable<Questao>
 {
-  public class Questao
-  {
-    //________________________________________________________________________________________________________________
-    public string? Pergunta {get;set;}
-    public string? Resposta0{get;set;}
-    public string? Resposta1{get;set;}
-    public string? Resposta2{get;set;}
-    public string? Resposta3{get;set;}
-    public string? Resposta4{get;set;}
-    public int Nivel {get;set;} = 0;
-    public int RespostaCerta;
-    public int RespostaE;
-    //________________________________________________________________________________________________________________
+public Questao()
+{
+
+}
+    public bool Equals(Questao questao)
+    {
+        return this.Nivel == questao.Nivel && this.pergunta==questao.pergunta;
+    }
+    public string pergunta { get; set; }
+    public string resposta1 { get; set; }
+    public string resposta2 { get; set; }
+    public string resposta3 { get; set; }
+    public string resposta4 { get; set; }
+    public string resposta5 { get; set; }
+    public int nivelpergunta { get; set; }
+    public int respostacorreta { get; set;}
+    public int Nivel;
     
+    public void desenhar()
+    {
+        labelPergunta.Text = pergunta;
+        btResposta01.Text = resposta1;
+        btResposta02.Text = resposta2;
+        btResposta03.Text = resposta3;
+        btResposta04.Text = resposta4;
+        btResposta05.Text = resposta5;
+
+        btResposta01.BackgroundColor = Colors.DarkBlue;
+        btResposta01.TextColor       = Colors.White;
+        btResposta02.BackgroundColor = Colors.DarkBlue;
+        btResposta02.TextColor       = Colors.White;
+        btResposta03.BackgroundColor = Colors.DarkBlue;
+        btResposta03.TextColor       = Colors.White;
+        btResposta04.BackgroundColor = Colors.DarkBlue;
+        btResposta04.TextColor       = Colors.White;
+        btResposta05.BackgroundColor = Colors.DarkBlue;
+        btResposta05.TextColor       = Colors.White;
+
+        btResposta01.IsVisible = true;
+        btResposta02.IsVisible = true;
+        btResposta03.IsVisible = true;
+        btResposta04.IsVisible = true;
+        btResposta05.IsVisible = true;
+    }
+
     private Label labelPergunta;
-    private Button buttonResposta0;
-    private Button buttonResposta1;
-    private Button buttonResposta2;
-    private Button buttonResposta3;
-    private Button buttonResposta4;
-    //___________________________________________________________________________________________________________________
-    public Questao()
+    private Button btResposta01;
+    private Button btResposta02;
+    private Button btResposta03;
+    private Button btResposta04;
+    private Button btResposta05;
+
+    public Questao(Label lp, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
     {
+        labelPergunta = lp;
+        btResposta01 = bt01;
+        btResposta02 = bt02;
+        btResposta03 = bt03;
+        btResposta04 = bt04;
+        btResposta05 = bt05;
     }
-    //________________________________________________________________________________________________________________
-    public void Desenhar()
+    public void ConfigurarEstruturaDesenho(Label lp, Button bt01, Button bt02, Button bt03, Button bt04, Button bt05)
     {
-      labelPergunta.Text = Pergunta;
-      buttonResposta0.Text = Resposta0;
-      buttonResposta1.Text = Resposta1;
-      buttonResposta2.Text = Resposta2;
-      buttonResposta3.Text = Resposta3;
-      buttonResposta4.Text = Resposta4;
-    //____________________________________________________________________________________________________________________
-      buttonResposta0!.BackgroundColor = Colors.DarkBlue;
-      buttonResposta0!.TextColor       = Colors.White;
-      buttonResposta1!.BackgroundColor = Colors.DarkBlue;
-      buttonResposta1!.TextColor       = Colors.White;
-      buttonResposta2!.BackgroundColor = Colors.DarkBlue;
-      buttonResposta2!.TextColor       = Colors.White;
-      buttonResposta3!.BackgroundColor = Colors.DarkBlue;
-      buttonResposta3!.TextColor       = Colors.White;
-      buttonResposta4!.BackgroundColor = Colors.DarkBlue;
-      buttonResposta4!.TextColor       = Colors.White;
-
+        labelPergunta = lp;
+        btResposta01 = bt01;
+        btResposta02 = bt02;
+        btResposta03 = bt03;
+        btResposta04 = bt04;
+        btResposta05 = bt05;
     }
-
-    //________________________________________________
-
-    public Questao(Label LP, Button bt00, Button bt01, Button bt02, Button bt03, Button bt04)
+    public bool VerificaResposta(int RR)
     {
-
-      labelPergunta = LP;
-
-      buttonResposta0 = bt00;
-      buttonResposta1 = bt01;
-      buttonResposta2 = bt02;
-      buttonResposta3 = bt03;
-      buttonResposta4 = bt04;
-    }
-    //________________________________________________________________________________________________________________
-    public void ConfigurarDesenho(Label LP, Button bt00, Button bt01, Button bt02, Button bt03, Button bt04)
+        if (respostacorreta == RR)
+        {
+            var botao = QualBotao (RR);
+            botao.BackgroundColor = Colors.Green;
+            return true;
+        }
+        else
+        {
+            var botaocorreto = QualBotao (respostacorreta);
+            var botaoincorreto = QualBotao (RR);
+            botaocorreto.BackgroundColor = Colors.Yellow;
+            botaoincorreto.BackgroundColor = Colors.Red;
+            return false;
+        }
+    } 
+    private Button QualBotao (int RR)
     {
-      labelPergunta = LP;
-      buttonResposta0 = bt00;
-      buttonResposta1 = bt01;
-      buttonResposta2 = bt02;
-      buttonResposta3 = bt03;
-      buttonResposta4 = bt04;
-    }
-    //__________________________________________________________________________________________________________________
-    public bool VerificarSeEstaCorreta(int RespostaCerta)
-    {
-      if (RespostaCerta == RespostaE)
-      {
-        var bot = QualBot(RespostaCerta);
-
-        bot.BackgroundColor = Colors.Black;
-        return true;
-      }
-      else
-      {
-        var Certo = QualBot (RespostaCerta);
-        var Errado = QualBot (RespostaE);
-        Certo.BackgroundColor = Color.FromArgb("#fad72a");
-        Errado.BackgroundColor = Color.FromArgb("#d11702");
-        return false;
-      }
-    }
-    //___________________________________________________________________________________________________________________
-    private Button QualBot(int RespostaCerta)
-    {
-      if (RespostaCerta == 0)
-        return buttonResposta0;
-
-      else if (RespostaCerta == 1)
-        return buttonResposta1;
-
-      else if (RespostaCerta == 2)
-        return buttonResposta2;
-
-      else if (RespostaCerta == 3)
-        return buttonResposta3;
-
-      else if (RespostaCerta == 4)
-        return buttonResposta4;
-      else
+        if (RR == 1)
+        return btResposta01;
+        else if (RR == 2)
+        return btResposta02;
+        else if (RR == 3)
+        return btResposta03;
+        else if (RR == 4)
+        return btResposta04;
+        else if (RR == 5)
+        return btResposta05;
+        else
         return null;
-    }
-
     }
 }
