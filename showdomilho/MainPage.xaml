@@ -1,8 +1,9 @@
-﻿
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="showdomilho.MainPage">
+             x:Class="showdomilho.MainPage"
+             Shell.NavBarIsVisible="false"
+             BackgroundColor="#3291f0">
 
 
        <Grid>
@@ -25,7 +26,7 @@
               </Grid.ColumnDefinitions>
 
               <Image
-                     Source="pontodeinterogacao.webp"
+                     Source="pergunta1.png"
                      Grid.ColumnSpan="3"
                      Grid.RowSpan="0"
                      Aspect="AspectFill"/>
@@ -37,7 +38,7 @@
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
                        FontSize="15"
-                       BackgroundColor="#a7e0d8"
+                       BackgroundColor="#dcf4fa"
                        TextColor="Black"/>
                 
                 <Label x:Name="labelNivel"
@@ -59,60 +60,55 @@
                        TextColor="Black"/>
 
 
-                <Button x:Name="btResposta01"
+                <Button x:Name="Resposta01"
                         Clicked="Resposta1Clicked"
                         BorderWidth="2"
                         BackgroundColor="#000099"
                         TextColor="White"
-                        Margin="0,0,0,10"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="3"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
-                <Button x:Name="btResposta02"
+                <Button x:Name="Resposta02"
                         Clicked="Resposta2Clicked"
                         BorderWidth="2"
                         BackgroundColor="#000099"
                         TextColor="White"
-                        Margin="0,0,0,10"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="4"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
-                <Button x:Name="btResposta03"
+                <Button x:Name="Resposta03"
                         Clicked="Resposta3Clicked"
                         BorderWidth="2"
                         BackgroundColor="#000099"
                         TextColor="White"
-                        Margin="0,0,0,10"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="5"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
-                <Button x:Name="btResposta04"
+                <Button x:Name="Resposta04"
                         Clicked="Resposta4Clicked"
                         BorderWidth="2"
                         BackgroundColor="#000099"
                         TextColor="White"
-                        Margin="0,0,0,10"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="6"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
-                <Button x:Name="btResposta05"
+                <Button x:Name="Resposta05"
                         Clicked="Resposta5Clicked"
                         BorderWidth="2"
                         BackgroundColor="#000099"
                         TextColor="White"
-                        Margin="0,0,0,10"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="7"
@@ -124,9 +120,8 @@
                         Clicked="RetirarClicked"
                         BorderWidth="2"
                         Padding=".12"
-                        TextColor="Black"
-                        BackgroundColor="#a7e0d8"
-                        Margin="0,0,0,10"
+                        TextColor="#9dd4e3"
+                        BackgroundColor="#210542"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="8"
@@ -136,9 +131,8 @@
                         Clicked="PularClicked"
                         BorderWidth="2"
                         Padding=".12"
-                        TextColor="Black"
-                        BackgroundColor="#a7e0d8"
-                        Margin="0,0,0,10"
+                        TextColor="#9dd4e3"
+                        BackgroundColor="#210542"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="8"
@@ -147,9 +141,8 @@
                 <Button Text="+1 CHANCE"
                         BorderWidth="2"
                         Padding="12"
-                        TextColor="Black"
-                        BackgroundColor="#a7e0d8"
-                        Margin="0,0,0,10"
+                        TextColor="#9dd4e3"
+                        BackgroundColor="#210542"
                         FontSize="15"
                         BorderColor="Black"
                         Grid.Row="8"

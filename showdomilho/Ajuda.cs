@@ -2,22 +2,22 @@ using showdomilho;
 
 public abstract class Ajuda
 {
-    protected Button btResposta01;
-    protected Button btResposta02;
-    protected Button btResposta03;
-    protected Button btResposta04;
-    protected Button btResposta05;
+    protected Button Resposta01;
+    protected Button Resposta02;
+    protected Button Resposta03;
+    protected Button Resposta04;
+    protected Button Resposta05;
     protected Frame  frameAjuda;
 
-    public void ConfigurarEstruturaDesenho(Button btResposta01, Button btResposta02, Button btResposta03, Button btResposta04, Button btResposta05)
+    public void ConfiguraDesenho(Button Resposta01, Button Resposta02, Button Resposta03, Button Resposta04, Button Resposta05)
     {
-        this.btResposta01 = btResposta01;
-        this.btResposta02 = btResposta02;
-        this.btResposta03 = btResposta03;
-        this.btResposta04 = btResposta04;
-        this.btResposta05 = btResposta05;
+        this.Resposta01 = Resposta01;
+        this.Resposta02 = Resposta02;
+        this.Resposta03 = Resposta03;
+        this.Resposta04 = Resposta04;
+        this.Resposta05 = Resposta05;
     }
-    public void ConfigurarEstruturaDesenho (Frame frameAjuda)
+    public void ConfiguraDesenho (Frame frameAjuda)
     {
         this.frameAjuda = frameAjuda;
     }

@@ -6,7 +6,7 @@
         public MainPage()
         {
             InitializeComponent();
-            gerenciador = new Gerenciador (labelPergunta, btResposta01, btResposta02, btResposta03, btResposta04, btResposta05, labelPontuacao, labelNivel);
+            gerenciador = new Gerenciador (labelPergunta, Resposta01, Resposta02, Resposta03, Resposta04, Resposta05, labelPontuacao, labelNivel);
         }
 
         private void Resposta1Clicked (object sender, EventArgs e)
@@ -33,8 +33,8 @@
         void RetirarClicked (object s, EventArgs e)
         {
             var ajuda = new RetiraErrada();
-            ajuda.ConfigurarEstruturaDesenho (btResposta01, btResposta02, btResposta03, btResposta04, btResposta05);
-            ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+            ajuda.ConfiguraDesenho (Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
+            ajuda.RealizaAjuda(gerenciador.GetQuestaoAtual());
             (s as Button).IsVisible = false;
         }
         void PularClicked (object s, EventArgs e)
