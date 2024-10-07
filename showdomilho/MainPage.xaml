@@ -56,7 +56,7 @@
                        Grid.Row="2"
                        Grid.ColumnSpan="3"
                        FontSize="15"
-                       BackgroundColor="#FFCD75"
+                       BackgroundColor="#77000000"
                        TextColor="Black"/>
 
 
@@ -138,8 +138,10 @@
                         Grid.Row="8"
                         Grid.Column="1"/>
 
-                <Button Text="+1 CHANCE"
+                <Button x:Name="resposta001"
+                        Text="+1 CHANCE"
                         BorderWidth="2"
+                        Clicked="Buttonporcentagm"
                         Padding="12"
                         TextColor="#9dd4e3"
                         BackgroundColor="#210542"

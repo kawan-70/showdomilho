@@ -42,5 +42,12 @@
             gerenciador.ProximaQuestao();
             (s as Button).IsVisible = false;
         }
+         void Buttonporcentagm(object s, EventArgs e)
+        {
+            var ajuda = new Universitarios();
+        ajuda.ConfiguraDesenho(Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
+        ajuda.RealizaAjuda(gerenciador.GetQuestaoAtual());
+        (s as Button).IsVisible=false;
+        }
     }
 }
