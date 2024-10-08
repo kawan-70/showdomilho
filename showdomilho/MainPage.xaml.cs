@@ -8,7 +8,7 @@
             InitializeComponent();
             gerenciador = new Gerenciador (labelPergunta, Resposta01, Resposta02, Resposta03, Resposta04, Resposta05, labelPontuacao, labelNivel);
         }
-
+        int pula = 0;
         private void Resposta1Clicked (object sender, EventArgs e)
         {
             gerenciador!.VerificaResposta(1);
@@ -38,9 +38,16 @@
             (s as Button).IsVisible = false;
         }
         void PularClicked (object s, EventArgs e)
-        {
-            gerenciador.ProximaQuestao();
+        {    
+            if (pula == 2)    
             (s as Button).IsVisible = false;
+            else
+            {
+                gerenciador.ProximaQuestao();
+                pula++;
+            }
+              Pula.Text = "Pula "+(3-pula)+ "X";
+
         }
          void Buttonporcentagm(object s, EventArgs e)
         {
