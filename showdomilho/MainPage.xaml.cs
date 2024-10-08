@@ -46,7 +46,15 @@
                 gerenciador.ProximaQuestao();
                 pula++;
             }
-              Pula.Text = "Pula "+(3-pula)+ "X";
+            if
+            (pula == 3)
+             Pula.Text ="pular 3x";
+             if
+             (pula == 2)
+             Pula.Text ="pular 1 x";
+             if
+             (pula == 1)
+             Pula.Text="pular 2 x";
 
         }
          void Buttonporcentagm(object s, EventArgs e)
